@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    background-image: url('C:/users/Administrador/Desktop/Hackaton/hackathon/img/fondoSembrar.png');
+    background-image: url('../img/fondoSembrar.png');
     background-size: cover;
 }
 .container {
