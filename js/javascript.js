@@ -236,16 +236,4 @@ window.onclick = function (event) {
 };
 
 
-// Agregar evento al clic en un día
-document.getElementById('calendar').addEventListener('click', function (e) {
-    const cell = e.target.closest('.toastui-calendar-weekday-grid');
-    if (cell) {
-      const fecha = cell.dataset.date;
-      if (fecha) {
-        mostrarDialogo(fecha);
-      }
-    } else {
-        console.log("Sin cell")
-    }
-    mostrarDialogo();
-  });
+
