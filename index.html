@@ -6,6 +6,10 @@
     <title>SisteAgro</title>
     <link rel="stylesheet" href="css/StylesSiembra.css">
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nodalStyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/javascript.js"></script>
 </head>
 <body>
     <header id="header"></header>
@@ -43,5 +47,52 @@
   <script src="js/calendar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
   <script src="js/javascript.js"></script>
+
+
+    <button id="btn-ver-datos" onclick="mostrarVentanaDatos()">Ver Datos</button>
+    
+        <tbody id="tabla-cultivos">
+            <!-- Se llenará dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+
+     <!-- Ventana Modal -->
+    <div id="overlay"></div>
+    <div id="ventana-datos">
+        <h2>Datos de Estados</h2>
+        <ul id="lista-datos">
+                <!-- Se llenará dinámicamente con JavaScript -->
+        </ul>
+        <button onclick="cerrarVentanaDatos()">Cerrar</button>
+    </div>
+    </main>
+    
+
+    <script>
+        function mostrarVentanaDatos() {
+            let estados = inicializarEstados();
+            console.log (estados)
+            const lista = document.getElementById('lista-datos');
+            lista.innerHTML = '';
+
+            estados.forEach(dato => {
+                const item = document.createElement('li');
+                item.textContent = `${dato._id}: ${dato._nombre}`;
+                lista.appendChild(item);
+            });
+
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('ventana-datos').style.display = 'block';
+        }
+
+        function cerrarVentanaDatos() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('ventana-datos').style.display = 'none';
+        }
+
+
+    </script>
+
+
 </body>
 </html>

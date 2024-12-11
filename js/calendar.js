@@ -1,6 +1,3 @@
-const cultivos = JSON.parse(localStorage.getItem('cultivos')) || [];
-const siembras = JSON.parse(localStorage.getItem('siembras')) || [];
-const estados = JSON.parse(localStorage.getItem('estados')) || [];
 
 // Función para organizar cultivos por meses
 function organizarPorMes(cultivos) {
